@@ -1,5 +1,5 @@
 /* Service worker: la app desde cache, las frases desde la red. */
-const CACHE = 'pictionary-v3';
+const CACHE = 'pictionary-v4';
 const FILES = ['./', './index.html', './manifest.webmanifest',
                './icon-192.png', './icon-512.png', './icon-maskable.png'];
 
