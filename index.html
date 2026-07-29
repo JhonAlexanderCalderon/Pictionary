@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Pictionary · El reto</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+/* Tinta electrónica: sin degradados, sin sombras, sin animación, sin grises medios. */
+:root{
+  --paper:#fff;--ink:#000;--soft:#f2f2f2;--red:#b5152b;--blue:#12448f;--rule:3px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0;overscroll-behavior:none}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight:600;-webkit-user-select:none;user-select:none;touch-action:manipulation;
+}
+button{font:inherit;color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;cursor:pointer}
+button:disabled{border-color:var(--soft);color:#bdbdbd}
+button:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+input,textarea{font:inherit;font-weight:600;color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;padding:10px;width:100%;-webkit-user-select:text;user-select:text}
+
+#app{height:100%;display:flex;flex-direction:column;padding:clamp(10px,1.6vmin,20px);gap:clamp(8px,1.4vmin,16px)}
+
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex:0 0 auto}
+.brand{font-size:clamp(14px,2.2vmin,22px);font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.meta{font-size:clamp(11px,1.7vmin,16px);font-weight:700;letter-spacing:.06em}
+
+/* tarjeta del reto: manda en la pantalla */
+.card{flex:1 1 auto;min-height:0;border:var(--rule) solid var(--ink);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:clamp(12px,3vmin,36px);gap:clamp(8px,2vmin,20px)}
+.eyebrow{font-size:clamp(10px,1.6vmin,15px);letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+.phrase{font-weight:800;line-height:1.1;font-size:var(--fs,clamp(28px,7vmin,84px))}
+.mask{font-weight:800;letter-spacing:.08em;font-size:clamp(44px,14vmin,150px);line-height:1}
+.hint{font-size:clamp(13px,2vmin,20px);font-weight:600;line-height:1.35;max-width:36ch;margin:0}
+
+/* la regla de 60 segundos */
+.timer{display:flex;align-items:center;gap:clamp(10px,2vmin,20px);flex:0 0 auto}
+.digits{font-family:ui-monospace,"DejaVu Sans Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;
+        font-size:clamp(34px,9vmin,110px);font-weight:700;line-height:1;min-width:3.1ch;text-align:right}
+.ruler{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;flex:1;
+       height:clamp(28px,6vmin,64px);border:var(--rule) solid var(--ink);padding:4px}
+.tick{background:var(--paper)}
+.tick.on{background:var(--ink)}
+.tick.last{background:var(--red)}
+
+.row{display:flex;gap:8px;flex:0 0 auto}
+.row>*{flex:1}
+.btn{padding:clamp(12px,2.4vmin,26px) 8px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+     font-size:clamp(14px,2.4vmin,24px)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:disabled{background:var(--soft);color:#bdbdbd;border-color:var(--soft)}
+.btn.small{padding:clamp(9px,1.6vmin,16px) 6px;font-size:clamp(12px,1.9vmin,18px);letter-spacing:.02em}
+
+.score{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:0 0 auto}
+.team{border:var(--rule) solid var(--ink);padding:clamp(6px,1.2vmin,12px);display:flex;align-items:center;gap:10px}
+.team .who{font-size:clamp(10px,1.6vmin,15px);letter-spacing:.12em;text-transform:uppercase;font-weight:800;flex:1;text-align:left}
+.team .pts{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums;font-size:clamp(22px,4vmin,40px);font-weight:700;line-height:1;min-width:2ch;text-align:center}
+.team button{padding:clamp(6px,1.2vmin,12px) clamp(10px,1.6vmin,16px);font-weight:800;flex:0 0 auto}
+
+/* pantallas de ajustes */
+dialog{border:var(--rule) solid var(--ink);padding:0;width:min(560px,94vw);max-height:92vh;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.4)}
+.sheet{padding:18px;display:flex;flex-direction:column;gap:14px;overflow:auto}
+.sheet h2{margin:0;font-size:15px;letter-spacing:.14em;text-transform:uppercase}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1;min-width:54px;padding:10px 4px;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.note{font-size:13px;font-weight:600;line-height:1.4;margin:0;border-left:var(--rule) solid var(--ink);padding-left:10px}
+textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="head">
+    <div class="brand">Pictionary</div>
+    <div class="meta" id="meta">— / —</div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow" id="eyebrow">Turno nuevo</div>
+    <div class="phrase" id="phrase" hidden></div>
+    <div class="mask" id="mask" hidden>? ? ?</div>
+    <p class="hint" id="hint">Toca <b>Nueva frase</b> y léela sin que nadie más la vea.</p>
+  </div>
+
+  <div class="timer">
+    <div class="digits" id="digits">60</div>
+    <div class="ruler" id="ruler" aria-hidden="true"></div>
+  </div>
+
+  <div class="row">
+    <button class="btn" id="btnNew">Nueva frase</button>
+    <button class="btn primary" id="btnGo" disabled>Empezar</button>
+  </div>
+  <div class="row">
+    <button class="btn small" id="btnPeek" disabled>Espiar</button>
+    <button class="btn small" id="btnStop" disabled>Terminar</button>
+    <button class="btn small" id="btnWords">Frases</button>
+    <button class="btn small" id="btnSet">Ajustes</button>
+  </div>
+
+  <div class="score">
+    <div class="team"><span class="who">Equipo A</span><button data-team="A" data-d="-1">−</button><span class="pts" id="ptsA">0</span><button data-team="A" data-d="1">+</button></div>
+    <div class="team"><span class="who">Equipo B</span><button data-team="B" data-d="-1">−</button><span class="pts" id="ptsB">0</span><button data-team="B" data-d="1">+</button></div>
+  </div>
+</div>
+
+<dialog id="dlgSet"><div class="sheet">
+  <h2>Ajustes</h2>
+  <div class="field"><span>Tiempo por turno</span>
+    <div class="seg" id="segTime"><button data-v="30">30 s</button><button data-v="45">45 s</button><button data-v="60">60 s</button><button data-v="90">90 s</button><button data-v="120">120 s</button></div>
+  </div>
+  <div class="field"><span>Bloque de frases</span><div class="seg" id="segBlock"></div></div>
+  <div class="field"><span>Aviso al terminar</span>
+    <div class="seg" id="segBeep"><button data-v="1">Con sonido</button><button data-v="0">En silencio</button></div>
+  </div>
+  <div class="row">
+    <button class="btn small" id="btnResetScore">Reiniciar marcador</button>
+    <button class="btn primary small" id="btnCloseSet">Listo</button>
+  </div>
+</div></dialog>
+
+<dialog id="dlgWords"><div class="sheet">
+  <h2>Banco de frases</h2>
+  <p class="note" id="wStatus">—</p>
+
+  <div class="field"><span>Descargar desde Notion (con conexión)</span>
+    <input id="syncUrl" type="text" inputmode="url" placeholder="frases.json" spellcheck="false">
+    <div class="row"><button class="btn small" id="btnSync">Sincronizar ahora</button></div>
+    <p class="note">Si la app y el archivo están en el mismo sitio, déjalo vacío: usa <b>frases.json</b> de la propia carpeta.</p>
+  </div>
+
+  <div class="field"><span>Pegar o editar la lista</span>
+    <textarea id="wText" spellcheck="false" placeholder="### Bloque 1&#10;1. I read at school.&#10;2. I write in the classroom."></textarea>
+    <p class="note">Una frase por línea. El número inicial es opcional. Las líneas que empiezan por <b>###</b> abren un bloque nuevo.</p>
+  </div>
+
+  <div class="row">
+    <button class="btn small" id="btnRestore">Volver a las originales</button>
+    <button class="btn small" id="btnSaveText">Guardar lista</button>
+    <button class="btn primary small" id="btnCloseWords">Listo</button>
+  </div>
+</div></dialog>
+
+<script>
+/* ============ 1 · BANCO DE FRASES ============ */
+const BUILTIN=[
+["I read at school.","I write in the classroom.","I listen with my teacher.","You speak with my friends.","You learn at my desk.","We study in my backpack.","We look on the table.","They draw at school.","They color in the classroom.","I walk at home.","I run in my bedroom.","You jump in the kitchen.","You sit in the living room.","We stand on the bed.","We move with my mom.","They climb with my dad.","They travel with Oliver.","I play at the park.","I throw on the bus.","You catch in the car.","You kick on the road.","We build in the rain.","We win in the sun.","They share on the grass.","They find with my dog.","I want with my cat.","You need with a small bird.","We think with a brown bear.","They know with a white cat.","I eat at lunch time.","You drink in the afternoon.","We sleep on the swing.","They wake up with a funny book.","I wash with new shoes.","You clean with a yellow hat.","We cook with a green shirt.","They work with a happy face.","I climb in the town.","You hide in the city.","We explore at the market.","They protect in the room.","I search on the floor.","You find in the box.","We fight at the window.","They escape in the shop.","I lead on the hill.","You follow at the door.","We cross at the beach.","They carry in the pool.","I frighten on the boat."],
+["My mom cooks in the kitchen.","My mom cleans at home.","My mom reads in my bedroom.","My mom writes on the table.","My mom walks in the garden.","My mom plays with my cat.","My mom eats at lunch time.","My mom sleeps on the bed.","My dad works at home.","My dad walks on the road.","My dad runs in the park.","My dad drinks in the kitchen.","My dad cooks with my mom.","My dad reads with a funny book.","My dad sits on the floor.","Lorena learns at school.","Lorena draws in the classroom.","Lorena listens with my teacher.","Lorena plays on the playground.","Lorena runs in the park.","Lorena eats at home.","Lorena drinks in the kitchen.","Oliver plays with a big ball.","Oliver runs on the grass.","Oliver throws with a red pencil.","Oliver catches in the playground.","Oliver kicks at school.","Oliver jumps on the bed.","Oliver sleeps in my bedroom.","My grandma cooks in the kitchen.","My grandma cleans at home.","My grandma reads with a funny book.","My grandma walks in the garden.","My grandma sits on the floor.","My grandma eats at lunch time.","My grandma sleeps in the living room.","My teacher explains at school.","My teacher speaks in the classroom.","My teacher speaks with my friends.","My teacher reads on the table.","My teacher writes in my backpack.","My teacher listens at my desk.","My teacher helps at school.","My teacher understands in the classroom.","My teacher knows at home.","My teacher thinks in the living room.","My teacher wants at the park.","My teacher needs on the bus.","My teacher looks with a happy face.","My teacher works in the school."],
+["Rowan climbs at the park.","Rowan runs on the road.","Rowan hides in the rain.","Rowan explores in the sun.","Rowan rescues on the grass.","Rowan searches in the water.","Rowan finds at the beach.","Rowan fights at the zoo.","Rowan escapes on the bus.","Rowan leads in the car.","Strong Jonn walks on the road.","Strong Jonn climbs in the sun.","Strong Jonn helps with my dog.","Strong Jonn protects with Star.","Strong Jonn works at home.","Strong Jonn stands on the grass.","Strong Jonn moves in the rain.","Strong Jonn thinks at the park.","Strong Jonn wants with a brown bear.","Strong Jonn builds with a blue toy.","Marlie reads at school.","Marlie writes in the classroom.","Marlie speaks with my friends.","Marlie learns at my desk.","Marlie studies in my backpack.","Marlie listens with my teacher.","Marlie asks on the table.","Marlie answers at lunch time.","Marlie shows in my bedroom.","Marlie explains in the kitchen.","Bronden works in the living room.","Bronden cleans at home.","Bronden cooks with my mom.","Bronden eats with my dad.","Bronden drinks with Oliver.","Bronden sleeps on the bed.","Bronden wakes up in the morning.","Bronden washes with new shoes.","Bronden buys with a yellow hat.","Bronden sells with a green shirt.","Val plays at the park.","Val runs on the playground.","Val jumps with a big ball.","Val throws with a funny book.","Val catches with a black pen.","Val kicks with a sweet apple.","Val builds with a cold drink.","Val wins at the beach.","Val loses at the zoo.","Val shares on the bus."],
+["Ellis travels in the car.","Ellis arrives on the road.","Ellis stops in the rain.","Ellis turns in the sun.","Ellis follows on the grass.","Ellis passes in the water.","Ellis leaves at the park.","Ellis falls at the beach.","Ellis reaches at the zoo.","Ellis stays on the bus.","Allun thinks at school.","Allun knows in the classroom.","Allun believes with my teacher.","Allun feels with my friends.","Allun wants at my desk.","Allun needs in my backpack.","Allun hopes on the table.","Allun expects at lunch time.","Allun decides in my bedroom.","Allun considers in the kitchen.","Sheba protects with my dog.","Sheba saves with my cat.","Sheba runs in the park.","Sheba jumps on the grass.","Sheba eats with a sweet apple.","Sheba sleeps on the bed.","Sheba walks in the garden.","Sheba sits on the floor.","Sheba plays with a big ball.","Sheba watches in the sun.","Star runs on the grass.","Star walks in the garden.","Star jumps at the park.","Star eats with a sweet apple.","Star drinks in the water.","Star sleeps on the bed.","Star stands on the floor.","Star moves in the rain.","Star plays with a big ball.","Star lives at home.","Annad works at home.","Annad reads in the living room.","Annad writes on the table.","Annad speaks with my teacher.","Annad thinks in my bedroom.","Annad knows at school.","Annad helps with my friends.","Annad walks in the garden.","Annad sits on the floor.","Annad stays at home."]
+];
+function fromBuiltin(){
+  const items=[];
+  BUILTIN.forEach((arr,i)=>arr.forEach(t=>items.push({t,b:i+1})));
+  return {items,source:'originales',updated:''};
+}
+
+/* Lector tolerante: JSON del worker, JSON crudo de Notion, o texto pegado. */
+function parseAny(raw){
+  const txt=String(raw).trim();
+  if(txt.startsWith('{')||txt.startsWith('[')){
+    let j;try{j=JSON.parse(txt)}catch(e){return parseText(txt)}
+    if(Array.isArray(j))return j.map(normalize).filter(Boolean);
+    if(Array.isArray(j.items))return j.items.map(normalize).filter(Boolean);
+    if(Array.isArray(j.results))return j.results.map(fromNotionRow).filter(Boolean);
+  }
+  return parseText(txt);
+}
+function normalize(x){
+  if(typeof x==='string')return x.trim()?{t:x.trim(),b:1}:null;
+  if(x&&x.t)return{t:String(x.t).trim(),b:+x.b||1};
+  return null;
+}
+function fromNotionRow(row){
+  const p=row&&row.properties;if(!p)return null;
+  let t='',b=1;
+  for(const k in p){
+    const v=p[k];
+    if(v.type==='title')t=(v.title||[]).map(s=>s.plain_text).join('').trim();
+    if(/bloque|block/i.test(k)){
+      if(v.type==='select'&&v.select)b=+v.select.name||1;
+      if(v.type==='number'&&v.number)b=+v.number||1;
+    }
+    if(/activa|active/i.test(k)&&v.type==='checkbox'&&v.checkbox===false)return null;
+  }
+  return t?{t,b}:null;
+}
+function parseText(txt){
+  const out=[];let b=1;
+  for(let line of txt.split(/\r?\n/)){
+    line=line.trim();if(!line)continue;
+    if(/^#{1,6}\s/.test(line)){const m=line.match(/(\d+)/);b=m?+m[1]:b+1;continue}
+    const m=line.match(/^\d+\s*[.)]\s*(.+)$/);
+    out.push({t:(m?m[1]:line).trim(),b});
+  }
+  return out;
+}
+function toText(items){
+  let s='',last=null;
+  for(const it of items){
+    if(it.b!==last){s+=(s?'\n':'')+'### Bloque '+it.b+'\n';last=it.b}
+    s+=it.t+'\n';
+  }
+  return s;
+}
+
+/* ============ 2 · ESTADO ============ */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const store={
+  get(k,d){try{const v=localStorage.getItem('pict.'+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+  set(k,v){try{localStorage.setItem('pict.'+k,JSON.stringify(v))}catch(e){}}
+};
+let cfg={dur:store.get('dur',60),block:store.get('block',0),beep:store.get('beep',1),url:store.get('url','')};
+let score={A:store.get('A',0),B:store.get('B',0)};
+let bank=store.get('bank',null)||fromBuiltin();
+let order=[],cursor=0,current=null,phase='idle',endAt=0,tick=null;
+
+function blocks(){return [...new Set(bank.items.map(i=>i.b))].sort((a,b)=>a-b)}
+function reshuffle(){
+  const set=bank.items.filter(i=>!cfg.block||i.b===cfg.block).slice();
+  for(let i=set.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[set[i],set[j]]=[set[j],set[i]]}
+  order=set;cursor=0;paintMeta();
+}
+function paintMeta(){$('#meta').textContent=`${cursor} / ${order.length}`+(cfg.block?` · bloque ${cfg.block}`:'')}
+function saveBank(){store.set('bank',bank)}
+
+/* ============ 3 · REGLA DE SEGUNDOS ============ */
+const TICKS=12,ruler=$('#ruler');
+for(let i=0;i<TICKS;i++)ruler.appendChild(Object.assign(document.createElement('div'),{className:'tick on'}));
+const ticks=[...ruler.children];let lastFilled=-1;
+function paintRuler(left,total){
+  const filled=Math.ceil(left/total*TICKS);
+  if(filled===lastFilled)return;lastFilled=filled;
+  ticks.forEach((t,i)=>t.className='tick'+(i<filled?(filled<=2?' on last':' on'):''));
+}
+
+/* ============ 4 · TURNO ============ */
+function setPhase(p){
+  phase=p;
+  const ready=p==='ready',run=p==='run',end=p==='end';
+  $('#btnNew').disabled=run;$('#btnGo').disabled=!ready;
+  $('#btnPeek').disabled=!run;$('#btnStop').disabled=!run;
+  $('#phrase').hidden=!(ready||end);$('#mask').hidden=!run;$('#hint').hidden=run||end;
+  if(p==='idle'){$('#eyebrow').textContent='Turno nuevo';$('#hint').innerHTML='Toca <b>Nueva frase</b> y léela sin que nadie más la vea.'}
+  if(ready){$('#eyebrow').textContent='Sólo para quien dibuja';$('#hint').innerHTML='Deja la tablet a la vista y toca <b>Empezar</b>.'}
+  if(run)$('#eyebrow').textContent='Dibujando';
+  if(end)$('#eyebrow').textContent='Se acabó el tiempo';
+}
+function showPhrase(t){
+  const el=$('#phrase');el.textContent=t;
+  const n=t.length;
+  el.style.setProperty('--fs', n<=24?'clamp(32px,8.5vmin,96px)':n<=34?'clamp(28px,7vmin,80px)':'clamp(24px,5.6vmin,64px)');
+}
+function newPhrase(){
+  if(tick)stopTimer(false);
+  if(!order.length)reshuffle();
+  if(!order.length){$('#hint').textContent='No hay frases cargadas. Abre Frases y pega tu lista.';return}
+  if(cursor>=order.length)reshuffle();
+  current=order[cursor++];
+  showPhrase(current.t);paintMeta();
+  showDigits(cfg.dur);lastFilled=-1;paintRuler(cfg.dur,cfg.dur);
+  setPhase('ready');
+}
+function showDigits(n){$('#digits').textContent=n}
+let wake=null;
+async function keepAwake(on){try{
+  if(on&&'wakeLock'in navigator)wake=await navigator.wakeLock.request('screen');
+  else if(wake){wake.release();wake=null}
+}catch(e){}}
+function start(){
+  if(phase!=='ready')return;
+  endAt=Date.now()+cfg.dur*1000;setPhase('run');keepAwake(true);
+  let shown=-1;
+  tick=setInterval(()=>{
+    const left=Math.max(0,Math.ceil((endAt-Date.now())/1000));
+    if(left!==shown){shown=left;showDigits(left);paintRuler(left,cfg.dur)}
+    if(left<=0)stopTimer(true);
+  },200);
+}
+function stopTimer(finished){
+  if(tick){clearInterval(tick);tick=null}
+  keepAwake(false);
+  if(finished){
+    showDigits(0);paintRuler(0,cfg.dur);
+    if(cfg.beep)beep();
+    if(navigator.vibrate)navigator.vibrate([220,120,220]);
+    setPhase('end');
+  }
+}
+function beep(){try{
+  const AC=window.AudioContext||window.webkitAudioContext,a=new AC();
+  [0,.28,.56].forEach(t=>{
+    const o=a.createOscillator(),g=a.createGain();
+    o.type='square';o.frequency.value=880;o.connect(g);g.connect(a.destination);
+    g.gain.setValueAtTime(.001,a.currentTime+t);
+    g.gain.exponentialRampToValueAtTime(.25,a.currentTime+t+.02);
+    g.gain.exponentialRampToValueAtTime(.001,a.currentTime+t+.2);
+    o.start(a.currentTime+t);o.stop(a.currentTime+t+.22);
+  });setTimeout(()=>a.close(),1200);
+}catch(e){}}
+
+$('#btnNew').onclick=newPhrase;
+$('#btnGo').onclick=start;
+$('#btnStop').onclick=()=>stopTimer(true);
+const peek=$('#btnPeek');
+peek.addEventListener('pointerdown',e=>{if(phase==='run'){e.preventDefault();$('#mask').hidden=true;$('#phrase').hidden=false}});
+['pointerup','pointerleave','pointercancel'].forEach(ev=>peek.addEventListener(ev,()=>{if(phase==='run'){$('#phrase').hidden=true;$('#mask').hidden=false}}));
+addEventListener('keydown',e=>{if(e.code==='Space'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
+  e.preventDefault();phase==='run'?stopTimer(true):phase==='ready'?start():newPhrase()}});
+
+/* marcador */
+function paintScore(){$('#ptsA').textContent=score.A;$('#ptsB').textContent=score.B}
+$$('.team button').forEach(b=>b.onclick=()=>{const t=b.dataset.team;score[t]=Math.max(0,score[t]+ +b.dataset.d);store.set(t,score[t]);paintScore()});
+
+/* ============ 5 · AJUSTES ============ */
+function paintSeg(id,val){$$(`#${id} button`).forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===val))}
+function buildBlockSeg(){
+  const seg=$('#segBlock');seg.innerHTML='';
+  const mk=(v,label)=>{const b=document.createElement('button');b.dataset.v=v;b.textContent=label;
+    b.onclick=()=>{cfg.block=v;store.set('block',v);reshuffle();paintSeg('segBlock',v)};seg.appendChild(b)};
+  mk(0,'Todos');blocks().forEach(b=>mk(b,'B'+b));
+  paintSeg('segBlock',cfg.block);
+}
+$('#btnSet').onclick=()=>{buildBlockSeg();paintSeg('segTime',cfg.dur);paintSeg('segBeep',cfg.beep);$('#dlgSet').showModal()};
+$('#btnCloseSet').onclick=()=>$('#dlgSet').close();
+$$('#segTime button').forEach(b=>b.onclick=()=>{cfg.dur=+b.dataset.v;store.set('dur',cfg.dur);paintSeg('segTime',cfg.dur);
+  if(phase!=='run'){showDigits(cfg.dur);lastFilled=-1;paintRuler(cfg.dur,cfg.dur)}});
+$$('#segBeep button').forEach(b=>b.onclick=()=>{cfg.beep=+b.dataset.v;store.set('beep',cfg.beep);paintSeg('segBeep',cfg.beep)});
+$('#btnResetScore').onclick=()=>{score={A:0,B:0};store.set('A',0);store.set('B',0);paintScore()};
+
+/* ============ 6 · FRASES ============ */
+function wStatus(msg){
+  $('#wStatus').textContent = msg || `${bank.items.length} frases · ${blocks().length} bloques · origen: ${bank.source}${bank.updated?' · '+bank.updated:''}`;
+}
+$('#btnWords').onclick=()=>{$('#syncUrl').value=cfg.url;$('#wText').value=toText(bank.items);wStatus();$('#dlgWords').showModal()};
+$('#btnCloseWords').onclick=()=>$('#dlgWords').close();
+function adopt(items,source){
+  if(!items.length){wStatus('No se encontró ninguna frase. Revisa el formato.');return false}
+  bank={items,source,updated:new Date().toISOString().slice(0,10)};
+  saveBank();cfg.block=0;store.set('block',0);reshuffle();buildBlockSeg();setPhase('idle');wStatus();return true;
+}
+$('#btnSaveText').onclick=()=>{if(adopt(parseText($('#wText').value),'lista propia'))wStatus()};
+$('#btnRestore').onclick=()=>{bank=fromBuiltin();saveBank();cfg.block=0;store.set('block',0);reshuffle();buildBlockSeg();$('#wText').value=toText(bank.items);wStatus()};
+$('#btnSync').onclick=async()=>{
+  const escrito=$('#syncUrl').value.trim();
+  cfg.url=escrito;store.set('url',escrito);
+  const url=escrito||'frases.json';
+  wStatus('Descargando…');
+  try{
+    const r=await fetch(url,{cache:'no-store'});
+    if(!r.ok){wStatus('El servidor respondió '+r.status+'. Las frases guardadas siguen intactas.');return}
+    const items=parseAny(await r.text());
+    if(adopt(items,'Notion')){$('#wText').value=toText(bank.items)}
+  }catch(e){
+    wStatus('Sin conexión o dirección inalcanzable. Sigues jugando con las frases guardadas.');
+  }
+};
+
+/* ============ 7 · ARRANQUE ============ */
+reshuffle();paintScore();setPhase('idle');showDigits(cfg.dur);paintRuler(cfg.dur,cfg.dur);
+if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
