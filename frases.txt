@@ -1,11 +1,11 @@
-### Bloque 1: Oraciones 1 a 50 (I, You, We, They)
+### Bloque 1
 1. I read at school.
 2. I write in the classroom.
 3. I listen with my teacher.
 4. You speak with my friends.
 5. You learn at my desk.
-6. We study in my backpack.
-7. We look on the table.
+6. We study in the classroom.
+7. We look at the table.
 8. They draw at school.
 9. They color in the classroom.
 10. I walk at home.
@@ -13,43 +13,44 @@
 12. You jump in the kitchen.
 13. You sit in the living room.
 14. We stand on the bed.
-15. We move with my mom.
+15. We walk with my mom.
 16. They climb with my dad.
 17. They travel with Oliver.
 18. I play at the park.
-19. I throw on the bus.
-20. You catch in the car.
-21. You kick on the road.
+19. I play on the bus.
+20. You sleep in the car.
+21. You walk on the road.
 22. We build in the rain.
 23. We win in the sun.
-24. They share on the grass.
-25. They find with my dog.
-26. I want with my cat.
-27. You need with a small bird.
-28. We think with a brown bear.
-29. They know with a white cat.
+24. They sit on the grass.
+25. They find my dog on the grass.
+26. I play with my cat.
+27. You play with a small bird.
+28. We think about a brown bear.
+29. They know a white cat.
 30. I eat at lunch time.
 31. You drink in the afternoon.
 32. We sleep on the swing.
-33. They wake up with a funny book.
-34. I wash with new shoes.
-35. You clean with a yellow hat.
-36. We cook with a green shirt.
-37. They work with a happy face.
+33. They read a funny book.
+34. I play with a blue toy.
+35. You play with a yellow hat.
+36. We wear a green shirt.
+37. They smile with a happy face.
 38. I climb in the town.
 39. You hide in the city.
 40. We explore at the market.
-41. They protect in the room.
-42. I search on the floor.
-43. You find in the box.
+41. They protect the room.
+42. I sit on the floor.
+43. You look in the box.
 44. We fight at the window.
 45. They escape in the shop.
 46. I lead on the hill.
-47. You follow at the door.
+47. You wait at the door.
 48. We cross at the beach.
-49. They carry in the pool.
-50. I frighten on the boat.
-### Bloque 2: Oraciones 51 a 100 (Familia y Profesores)
+49. They swim in the pool.
+50. I travel on the boat.
+
+### Bloque 2
 51. My mom cooks in the kitchen.
 52. My mom cleans at home.
 53. My mom reads in my bedroom.
@@ -74,9 +75,9 @@
 72. Lorena drinks in the kitchen.
 73. Oliver plays with a big ball.
 74. Oliver runs on the grass.
-75. Oliver throws with a red pencil.
-76. Oliver catches in the playground.
-77. Oliver kicks at school.
+75. Oliver draws with a red pencil.
+76. Oliver plays in the playground.
+77. Oliver learns at school.
 78. Oliver jumps on the bed.
 79. Oliver sleeps in my bedroom.
 80. My grandma cooks in the kitchen.
@@ -89,27 +90,28 @@
 87. My teacher explains at school.
 88. My teacher speaks in the classroom.
 89. My teacher speaks with my friends.
-90. My teacher reads on the table.
-91. My teacher writes in my backpack.
+90. My teacher reads at the table.
+91. My teacher puts a note in my backpack.
 92. My teacher listens at my desk.
 93. My teacher helps at school.
 94. My teacher understands in the classroom.
 95. My teacher knows at home.
 96. My teacher thinks in the living room.
-97. My teacher wants at the park.
-98. My teacher needs on the bus.
+97. My teacher wants to go to the park.
+98. My teacher sits on the bus.
 99. My teacher looks with a happy face.
-100. My teacher works in the school.
-### Bloque 3: Oraciones 101 a 150 (Personajes de Rin: Rowan, Strong Jonn, Marlie, Bronden, Val)
-101. Rowan climbs at the park.
+100. My teacher works at school.
+
+### Bloque 3
+101. Rowan climbs in the park.
 102. Rowan runs on the road.
 103. Rowan hides in the rain.
 104. Rowan explores in the sun.
 105. Rowan rescues on the grass.
 106. Rowan searches in the water.
-107. Rowan finds at the beach.
+107. Rowan finds a shell at the beach.
 108. Rowan fights at the zoo.
-109. Rowan escapes on the bus.
+109. Rowan escapes from the bus.
 110. Rowan leads in the car.
 111. Strong Jonn walks on the road.
 112. Strong Jonn climbs in the sun.
@@ -119,13 +121,13 @@
 116. Strong Jonn stands on the grass.
 117. Strong Jonn moves in the rain.
 118. Strong Jonn thinks at the park.
-119. Strong Jonn wants with a brown bear.
+119. Strong Jonn wants a brown bear.
 120. Strong Jonn builds with a blue toy.
 121. Marlie reads at school.
 122. Marlie writes in the classroom.
 123. Marlie speaks with my friends.
 124. Marlie learns at my desk.
-125. Marlie studies in my backpack.
+125. Marlie studies in the classroom.
 126. Marlie listens with my teacher.
 127. Marlie asks on the table.
 128. Marlie answers at lunch time.
@@ -138,45 +140,46 @@
 135. Bronden drinks with Oliver.
 136. Bronden sleeps on the bed.
 137. Bronden wakes up in the morning.
-138. Bronden washes with new shoes.
-139. Bronden buys with a yellow hat.
-140. Bronden sells with a green shirt.
+138. Bronden washes their new shoes.
+139. Bronden buys a yellow hat.
+140. Bronden sells a green shirt.
 141. Val plays at the park.
 142. Val runs on the playground.
 143. Val jumps with a big ball.
-144. Val throws with a funny book.
-145. Val catches with a black pen.
-146. Val kicks with a sweet apple.
-147. Val builds with a cold drink.
+144. Val reads with a funny book.
+145. Val writes with a black pen.
+146. Val eats a sweet apple.
+147. Val builds with blocks.
 148. Val wins at the beach.
 149. Val loses at the zoo.
-150. Val shares on the bus.
-### Bloque 4: Oraciones 151 a 200 (Ellis, Allun, Sheba, Star, Annad)
+150. Val shares a toy on the bus.
+
+### Bloque 4
 151. Ellis travels in the car.
-152. Ellis arrives on the road.
+152. Ellis arrives at home.
 153. Ellis stops in the rain.
 154. Ellis turns in the sun.
 155. Ellis follows on the grass.
 156. Ellis passes in the water.
 157. Ellis leaves at the park.
 158. Ellis falls at the beach.
-159. Ellis reaches at the zoo.
+159. Ellis goes to the zoo.
 160. Ellis stays on the bus.
 161. Allun thinks at school.
 162. Allun knows in the classroom.
-163. Allun believes with my teacher.
-164. Allun feels with my friends.
+163. Allun believes my teacher.
+164. Allun plays with my friends.
 165. Allun wants at my desk.
-166. Allun needs in my backpack.
-167. Allun hopes on the table.
+166. Allun needs a backpack.
+167. Allun jumps on the table.
 168. Allun expects at lunch time.
 169. Allun decides in my bedroom.
-170. Allun considers in the kitchen.
-171. Sheba protects with my dog.
-172. Sheba saves with my cat.
+170. Allun thinks in the kitchen.
+171. Sheba protects my dog.
+172. Sheba plays with my cat.
 173. Sheba runs in the park.
 174. Sheba jumps on the grass.
-175. Sheba eats with a sweet apple.
+175. Sheba eats a sweet apple.
 176. Sheba sleeps on the bed.
 177. Sheba walks in the garden.
 178. Sheba sits on the floor.
@@ -185,7 +188,7 @@
 181. Star runs on the grass.
 182. Star walks in the garden.
 183. Star jumps at the park.
-184. Star eats with a sweet apple.
+184. Star eats a sweet apple.
 185. Star drinks in the water.
 186. Star sleeps on the bed.
 187. Star stands on the floor.
@@ -197,7 +200,7 @@
 193. Annad writes on the table.
 194. Annad speaks with my teacher.
 195. Annad thinks in my bedroom.
-196. Annad knows at school.
+196. Annad knows the answer at school.
 197. Annad helps with my friends.
 198. Annad walks in the garden.
 199. Annad sits on the floor.

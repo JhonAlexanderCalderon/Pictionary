@@ -1,0 +1,1007 @@
+{
+ "version": 1,
+ "updated": "2026-07-29",
+ "source": "notion",
+ "items": [
+  {
+   "t": "I read at school.",
+   "b": 1,
+   "n": 1
+  },
+  {
+   "t": "I write in the classroom.",
+   "b": 1,
+   "n": 2
+  },
+  {
+   "t": "I listen with my teacher.",
+   "b": 1,
+   "n": 3
+  },
+  {
+   "t": "You speak with my friends.",
+   "b": 1,
+   "n": 4
+  },
+  {
+   "t": "You learn at my desk.",
+   "b": 1,
+   "n": 5
+  },
+  {
+   "t": "We study in the classroom.",
+   "b": 1,
+   "n": 6
+  },
+  {
+   "t": "We look at the table.",
+   "b": 1,
+   "n": 7
+  },
+  {
+   "t": "They draw at school.",
+   "b": 1,
+   "n": 8
+  },
+  {
+   "t": "They color in the classroom.",
+   "b": 1,
+   "n": 9
+  },
+  {
+   "t": "I walk at home.",
+   "b": 1,
+   "n": 10
+  },
+  {
+   "t": "I run in my bedroom.",
+   "b": 1,
+   "n": 11
+  },
+  {
+   "t": "You jump in the kitchen.",
+   "b": 1,
+   "n": 12
+  },
+  {
+   "t": "You sit in the living room.",
+   "b": 1,
+   "n": 13
+  },
+  {
+   "t": "We stand on the bed.",
+   "b": 1,
+   "n": 14
+  },
+  {
+   "t": "We walk with my mom.",
+   "b": 1,
+   "n": 15
+  },
+  {
+   "t": "They climb with my dad.",
+   "b": 1,
+   "n": 16
+  },
+  {
+   "t": "They travel with Oliver.",
+   "b": 1,
+   "n": 17
+  },
+  {
+   "t": "I play at the park.",
+   "b": 1,
+   "n": 18
+  },
+  {
+   "t": "I play on the bus.",
+   "b": 1,
+   "n": 19
+  },
+  {
+   "t": "You sleep in the car.",
+   "b": 1,
+   "n": 20
+  },
+  {
+   "t": "You walk on the road.",
+   "b": 1,
+   "n": 21
+  },
+  {
+   "t": "We build in the rain.",
+   "b": 1,
+   "n": 22
+  },
+  {
+   "t": "We win in the sun.",
+   "b": 1,
+   "n": 23
+  },
+  {
+   "t": "They sit on the grass.",
+   "b": 1,
+   "n": 24
+  },
+  {
+   "t": "They find my dog on the grass.",
+   "b": 1,
+   "n": 25
+  },
+  {
+   "t": "I play with my cat.",
+   "b": 1,
+   "n": 26
+  },
+  {
+   "t": "You play with a small bird.",
+   "b": 1,
+   "n": 27
+  },
+  {
+   "t": "We think about a brown bear.",
+   "b": 1,
+   "n": 28
+  },
+  {
+   "t": "They know a white cat.",
+   "b": 1,
+   "n": 29
+  },
+  {
+   "t": "I eat at lunch time.",
+   "b": 1,
+   "n": 30
+  },
+  {
+   "t": "You drink in the afternoon.",
+   "b": 1,
+   "n": 31
+  },
+  {
+   "t": "We sleep on the swing.",
+   "b": 1,
+   "n": 32
+  },
+  {
+   "t": "They read a funny book.",
+   "b": 1,
+   "n": 33
+  },
+  {
+   "t": "I play with a blue toy.",
+   "b": 1,
+   "n": 34
+  },
+  {
+   "t": "You play with a yellow hat.",
+   "b": 1,
+   "n": 35
+  },
+  {
+   "t": "We wear a green shirt.",
+   "b": 1,
+   "n": 36
+  },
+  {
+   "t": "They smile with a happy face.",
+   "b": 1,
+   "n": 37
+  },
+  {
+   "t": "I climb in the town.",
+   "b": 1,
+   "n": 38
+  },
+  {
+   "t": "You hide in the city.",
+   "b": 1,
+   "n": 39
+  },
+  {
+   "t": "We explore at the market.",
+   "b": 1,
+   "n": 40
+  },
+  {
+   "t": "They protect the room.",
+   "b": 1,
+   "n": 41
+  },
+  {
+   "t": "I sit on the floor.",
+   "b": 1,
+   "n": 42
+  },
+  {
+   "t": "You look in the box.",
+   "b": 1,
+   "n": 43
+  },
+  {
+   "t": "We fight at the window.",
+   "b": 1,
+   "n": 44
+  },
+  {
+   "t": "They escape in the shop.",
+   "b": 1,
+   "n": 45
+  },
+  {
+   "t": "I lead on the hill.",
+   "b": 1,
+   "n": 46
+  },
+  {
+   "t": "You wait at the door.",
+   "b": 1,
+   "n": 47
+  },
+  {
+   "t": "We cross at the beach.",
+   "b": 1,
+   "n": 48
+  },
+  {
+   "t": "They swim in the pool.",
+   "b": 1,
+   "n": 49
+  },
+  {
+   "t": "I travel on the boat.",
+   "b": 1,
+   "n": 50
+  },
+  {
+   "t": "My mom cooks in the kitchen.",
+   "b": 2,
+   "n": 51
+  },
+  {
+   "t": "My mom cleans at home.",
+   "b": 2,
+   "n": 52
+  },
+  {
+   "t": "My mom reads in my bedroom.",
+   "b": 2,
+   "n": 53
+  },
+  {
+   "t": "My mom writes on the table.",
+   "b": 2,
+   "n": 54
+  },
+  {
+   "t": "My mom walks in the garden.",
+   "b": 2,
+   "n": 55
+  },
+  {
+   "t": "My mom plays with my cat.",
+   "b": 2,
+   "n": 56
+  },
+  {
+   "t": "My mom eats at lunch time.",
+   "b": 2,
+   "n": 57
+  },
+  {
+   "t": "My mom sleeps on the bed.",
+   "b": 2,
+   "n": 58
+  },
+  {
+   "t": "My dad works at home.",
+   "b": 2,
+   "n": 59
+  },
+  {
+   "t": "My dad walks on the road.",
+   "b": 2,
+   "n": 60
+  },
+  {
+   "t": "My dad runs in the park.",
+   "b": 2,
+   "n": 61
+  },
+  {
+   "t": "My dad drinks in the kitchen.",
+   "b": 2,
+   "n": 62
+  },
+  {
+   "t": "My dad cooks with my mom.",
+   "b": 2,
+   "n": 63
+  },
+  {
+   "t": "My dad reads with a funny book.",
+   "b": 2,
+   "n": 64
+  },
+  {
+   "t": "My dad sits on the floor.",
+   "b": 2,
+   "n": 65
+  },
+  {
+   "t": "Lorena learns at school.",
+   "b": 2,
+   "n": 66
+  },
+  {
+   "t": "Lorena draws in the classroom.",
+   "b": 2,
+   "n": 67
+  },
+  {
+   "t": "Lorena listens with my teacher.",
+   "b": 2,
+   "n": 68
+  },
+  {
+   "t": "Lorena plays on the playground.",
+   "b": 2,
+   "n": 69
+  },
+  {
+   "t": "Lorena runs in the park.",
+   "b": 2,
+   "n": 70
+  },
+  {
+   "t": "Lorena eats at home.",
+   "b": 2,
+   "n": 71
+  },
+  {
+   "t": "Lorena drinks in the kitchen.",
+   "b": 2,
+   "n": 72
+  },
+  {
+   "t": "Oliver plays with a big ball.",
+   "b": 2,
+   "n": 73
+  },
+  {
+   "t": "Oliver runs on the grass.",
+   "b": 2,
+   "n": 74
+  },
+  {
+   "t": "Oliver draws with a red pencil.",
+   "b": 2,
+   "n": 75
+  },
+  {
+   "t": "Oliver plays in the playground.",
+   "b": 2,
+   "n": 76
+  },
+  {
+   "t": "Oliver learns at school.",
+   "b": 2,
+   "n": 77
+  },
+  {
+   "t": "Oliver jumps on the bed.",
+   "b": 2,
+   "n": 78
+  },
+  {
+   "t": "Oliver sleeps in my bedroom.",
+   "b": 2,
+   "n": 79
+  },
+  {
+   "t": "My grandma cooks in the kitchen.",
+   "b": 2,
+   "n": 80
+  },
+  {
+   "t": "My grandma cleans at home.",
+   "b": 2,
+   "n": 81
+  },
+  {
+   "t": "My grandma reads with a funny book.",
+   "b": 2,
+   "n": 82
+  },
+  {
+   "t": "My grandma walks in the garden.",
+   "b": 2,
+   "n": 83
+  },
+  {
+   "t": "My grandma sits on the floor.",
+   "b": 2,
+   "n": 84
+  },
+  {
+   "t": "My grandma eats at lunch time.",
+   "b": 2,
+   "n": 85
+  },
+  {
+   "t": "My grandma sleeps in the living room.",
+   "b": 2,
+   "n": 86
+  },
+  {
+   "t": "My teacher explains at school.",
+   "b": 2,
+   "n": 87
+  },
+  {
+   "t": "My teacher speaks in the classroom.",
+   "b": 2,
+   "n": 88
+  },
+  {
+   "t": "My teacher speaks with my friends.",
+   "b": 2,
+   "n": 89
+  },
+  {
+   "t": "My teacher reads at the table.",
+   "b": 2,
+   "n": 90
+  },
+  {
+   "t": "My teacher puts a note in my backpack.",
+   "b": 2,
+   "n": 91
+  },
+  {
+   "t": "My teacher listens at my desk.",
+   "b": 2,
+   "n": 92
+  },
+  {
+   "t": "My teacher helps at school.",
+   "b": 2,
+   "n": 93
+  },
+  {
+   "t": "My teacher understands in the classroom.",
+   "b": 2,
+   "n": 94
+  },
+  {
+   "t": "My teacher knows at home.",
+   "b": 2,
+   "n": 95
+  },
+  {
+   "t": "My teacher thinks in the living room.",
+   "b": 2,
+   "n": 96
+  },
+  {
+   "t": "My teacher wants to go to the park.",
+   "b": 2,
+   "n": 97
+  },
+  {
+   "t": "My teacher sits on the bus.",
+   "b": 2,
+   "n": 98
+  },
+  {
+   "t": "My teacher looks with a happy face.",
+   "b": 2,
+   "n": 99
+  },
+  {
+   "t": "My teacher works at school.",
+   "b": 2,
+   "n": 100
+  },
+  {
+   "t": "Rowan climbs in the park.",
+   "b": 3,
+   "n": 101
+  },
+  {
+   "t": "Rowan runs on the road.",
+   "b": 3,
+   "n": 102
+  },
+  {
+   "t": "Rowan hides in the rain.",
+   "b": 3,
+   "n": 103
+  },
+  {
+   "t": "Rowan explores in the sun.",
+   "b": 3,
+   "n": 104
+  },
+  {
+   "t": "Rowan rescues on the grass.",
+   "b": 3,
+   "n": 105
+  },
+  {
+   "t": "Rowan searches in the water.",
+   "b": 3,
+   "n": 106
+  },
+  {
+   "t": "Rowan finds a shell at the beach.",
+   "b": 3,
+   "n": 107
+  },
+  {
+   "t": "Rowan fights at the zoo.",
+   "b": 3,
+   "n": 108
+  },
+  {
+   "t": "Rowan escapes from the bus.",
+   "b": 3,
+   "n": 109
+  },
+  {
+   "t": "Rowan leads in the car.",
+   "b": 3,
+   "n": 110
+  },
+  {
+   "t": "Strong Jonn walks on the road.",
+   "b": 3,
+   "n": 111
+  },
+  {
+   "t": "Strong Jonn climbs in the sun.",
+   "b": 3,
+   "n": 112
+  },
+  {
+   "t": "Strong Jonn helps with my dog.",
+   "b": 3,
+   "n": 113
+  },
+  {
+   "t": "Strong Jonn protects with Star.",
+   "b": 3,
+   "n": 114
+  },
+  {
+   "t": "Strong Jonn works at home.",
+   "b": 3,
+   "n": 115
+  },
+  {
+   "t": "Strong Jonn stands on the grass.",
+   "b": 3,
+   "n": 116
+  },
+  {
+   "t": "Strong Jonn moves in the rain.",
+   "b": 3,
+   "n": 117
+  },
+  {
+   "t": "Strong Jonn thinks at the park.",
+   "b": 3,
+   "n": 118
+  },
+  {
+   "t": "Strong Jonn wants a brown bear.",
+   "b": 3,
+   "n": 119
+  },
+  {
+   "t": "Strong Jonn builds with a blue toy.",
+   "b": 3,
+   "n": 120
+  },
+  {
+   "t": "Marlie reads at school.",
+   "b": 3,
+   "n": 121
+  },
+  {
+   "t": "Marlie writes in the classroom.",
+   "b": 3,
+   "n": 122
+  },
+  {
+   "t": "Marlie speaks with my friends.",
+   "b": 3,
+   "n": 123
+  },
+  {
+   "t": "Marlie learns at my desk.",
+   "b": 3,
+   "n": 124
+  },
+  {
+   "t": "Marlie studies in the classroom.",
+   "b": 3,
+   "n": 125
+  },
+  {
+   "t": "Marlie listens with my teacher.",
+   "b": 3,
+   "n": 126
+  },
+  {
+   "t": "Marlie asks on the table.",
+   "b": 3,
+   "n": 127
+  },
+  {
+   "t": "Marlie answers at lunch time.",
+   "b": 3,
+   "n": 128
+  },
+  {
+   "t": "Marlie shows in my bedroom.",
+   "b": 3,
+   "n": 129
+  },
+  {
+   "t": "Marlie explains in the kitchen.",
+   "b": 3,
+   "n": 130
+  },
+  {
+   "t": "Bronden works in the living room.",
+   "b": 3,
+   "n": 131
+  },
+  {
+   "t": "Bronden cleans at home.",
+   "b": 3,
+   "n": 132
+  },
+  {
+   "t": "Bronden cooks with my mom.",
+   "b": 3,
+   "n": 133
+  },
+  {
+   "t": "Bronden eats with my dad.",
+   "b": 3,
+   "n": 134
+  },
+  {
+   "t": "Bronden drinks with Oliver.",
+   "b": 3,
+   "n": 135
+  },
+  {
+   "t": "Bronden sleeps on the bed.",
+   "b": 3,
+   "n": 136
+  },
+  {
+   "t": "Bronden wakes up in the morning.",
+   "b": 3,
+   "n": 137
+  },
+  {
+   "t": "Bronden washes their new shoes.",
+   "b": 3,
+   "n": 138
+  },
+  {
+   "t": "Bronden buys a yellow hat.",
+   "b": 3,
+   "n": 139
+  },
+  {
+   "t": "Bronden sells a green shirt.",
+   "b": 3,
+   "n": 140
+  },
+  {
+   "t": "Val plays at the park.",
+   "b": 3,
+   "n": 141
+  },
+  {
+   "t": "Val runs on the playground.",
+   "b": 3,
+   "n": 142
+  },
+  {
+   "t": "Val jumps with a big ball.",
+   "b": 3,
+   "n": 143
+  },
+  {
+   "t": "Val reads with a funny book.",
+   "b": 3,
+   "n": 144
+  },
+  {
+   "t": "Val writes with a black pen.",
+   "b": 3,
+   "n": 145
+  },
+  {
+   "t": "Val eats a sweet apple.",
+   "b": 3,
+   "n": 146
+  },
+  {
+   "t": "Val builds with blocks.",
+   "b": 3,
+   "n": 147
+  },
+  {
+   "t": "Val wins at the beach.",
+   "b": 3,
+   "n": 148
+  },
+  {
+   "t": "Val loses at the zoo.",
+   "b": 3,
+   "n": 149
+  },
+  {
+   "t": "Val shares a toy on the bus.",
+   "b": 3,
+   "n": 150
+  },
+  {
+   "t": "Ellis travels in the car.",
+   "b": 4,
+   "n": 151
+  },
+  {
+   "t": "Ellis arrives at home.",
+   "b": 4,
+   "n": 152
+  },
+  {
+   "t": "Ellis stops in the rain.",
+   "b": 4,
+   "n": 153
+  },
+  {
+   "t": "Ellis turns in the sun.",
+   "b": 4,
+   "n": 154
+  },
+  {
+   "t": "Ellis follows on the grass.",
+   "b": 4,
+   "n": 155
+  },
+  {
+   "t": "Ellis passes in the water.",
+   "b": 4,
+   "n": 156
+  },
+  {
+   "t": "Ellis leaves at the park.",
+   "b": 4,
+   "n": 157
+  },
+  {
+   "t": "Ellis falls at the beach.",
+   "b": 4,
+   "n": 158
+  },
+  {
+   "t": "Ellis goes to the zoo.",
+   "b": 4,
+   "n": 159
+  },
+  {
+   "t": "Ellis stays on the bus.",
+   "b": 4,
+   "n": 160
+  },
+  {
+   "t": "Allun thinks at school.",
+   "b": 4,
+   "n": 161
+  },
+  {
+   "t": "Allun knows in the classroom.",
+   "b": 4,
+   "n": 162
+  },
+  {
+   "t": "Allun believes my teacher.",
+   "b": 4,
+   "n": 163
+  },
+  {
+   "t": "Allun plays with my friends.",
+   "b": 4,
+   "n": 164
+  },
+  {
+   "t": "Allun wants at my desk.",
+   "b": 4,
+   "n": 165
+  },
+  {
+   "t": "Allun needs a backpack.",
+   "b": 4,
+   "n": 166
+  },
+  {
+   "t": "Allun jumps on the table.",
+   "b": 4,
+   "n": 167
+  },
+  {
+   "t": "Allun expects at lunch time.",
+   "b": 4,
+   "n": 168
+  },
+  {
+   "t": "Allun decides in my bedroom.",
+   "b": 4,
+   "n": 169
+  },
+  {
+   "t": "Allun thinks in the kitchen.",
+   "b": 4,
+   "n": 170
+  },
+  {
+   "t": "Sheba protects my dog.",
+   "b": 4,
+   "n": 171
+  },
+  {
+   "t": "Sheba plays with my cat.",
+   "b": 4,
+   "n": 172
+  },
+  {
+   "t": "Sheba runs in the park.",
+   "b": 4,
+   "n": 173
+  },
+  {
+   "t": "Sheba jumps on the grass.",
+   "b": 4,
+   "n": 174
+  },
+  {
+   "t": "Sheba eats a sweet apple.",
+   "b": 4,
+   "n": 175
+  },
+  {
+   "t": "Sheba sleeps on the bed.",
+   "b": 4,
+   "n": 176
+  },
+  {
+   "t": "Sheba walks in the garden.",
+   "b": 4,
+   "n": 177
+  },
+  {
+   "t": "Sheba sits on the floor.",
+   "b": 4,
+   "n": 178
+  },
+  {
+   "t": "Sheba plays with a big ball.",
+   "b": 4,
+   "n": 179
+  },
+  {
+   "t": "Sheba watches in the sun.",
+   "b": 4,
+   "n": 180
+  },
+  {
+   "t": "Star runs on the grass.",
+   "b": 4,
+   "n": 181
+  },
+  {
+   "t": "Star walks in the garden.",
+   "b": 4,
+   "n": 182
+  },
+  {
+   "t": "Star jumps at the park.",
+   "b": 4,
+   "n": 183
+  },
+  {
+   "t": "Star eats a sweet apple.",
+   "b": 4,
+   "n": 184
+  },
+  {
+   "t": "Star drinks in the water.",
+   "b": 4,
+   "n": 185
+  },
+  {
+   "t": "Star sleeps on the bed.",
+   "b": 4,
+   "n": 186
+  },
+  {
+   "t": "Star stands on the floor.",
+   "b": 4,
+   "n": 187
+  },
+  {
+   "t": "Star moves in the rain.",
+   "b": 4,
+   "n": 188
+  },
+  {
+   "t": "Star plays with a big ball.",
+   "b": 4,
+   "n": 189
+  },
+  {
+   "t": "Star lives at home.",
+   "b": 4,
+   "n": 190
+  },
+  {
+   "t": "Annad works at home.",
+   "b": 4,
+   "n": 191
+  },
+  {
+   "t": "Annad reads in the living room.",
+   "b": 4,
+   "n": 192
+  },
+  {
+   "t": "Annad writes on the table.",
+   "b": 4,
+   "n": 193
+  },
+  {
+   "t": "Annad speaks with my teacher.",
+   "b": 4,
+   "n": 194
+  },
+  {
+   "t": "Annad thinks in my bedroom.",
+   "b": 4,
+   "n": 195
+  },
+  {
+   "t": "Annad knows the answer at school.",
+   "b": 4,
+   "n": 196
+  },
+  {
+   "t": "Annad helps with my friends.",
+   "b": 4,
+   "n": 197
+  },
+  {
+   "t": "Annad walks in the garden.",
+   "b": 4,
+   "n": 198
+  },
+  {
+   "t": "Annad sits on the floor.",
+   "b": 4,
+   "n": 199
+  },
+  {
+   "t": "Annad stays at home.",
+   "b": 4,
+   "n": 200
+  }
+ ]
+}
