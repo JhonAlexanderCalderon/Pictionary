@@ -11,21 +11,30 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
-/* Tinta electrónica: sin degradados, sin sombras, sin animación, sin grises medios. */
+/* -----------------------------------------------------------------
+   Paleta pensada para la capa de color del Boox (Kaleido):
+   satura menos de lo que ves aquí, así que los pasteles son de tono
+   medio. En la tablet se ven suaves; más pálidos se irían a blanco.
+   Cada jugador lleva además una forma propia, para reconocerlo
+   aunque el color se lave o la pantalla esté en blanco y negro.
+------------------------------------------------------------------ */
 :root{
-  --paper:#fff;--ink:#000;--soft:#f2f2f2;--red:#b5152b;--blue:#12448f;--rule:3px;
+  --paper:#fff;--ink:#141414;--soft:#efefef;--rule:3px;
+
+  --p1:#dd7f68; --p1-bg:#fbe6e0;   /* coral    · círculo  */
+  --p2:#6c99c8; --p2-bg:#e0eaf6;   /* azul     · triángulo */
+  --p3:#6cad83; --p3-bg:#dfeee4;   /* verde    · cuadrado  */
+  --warn:#dd7f68;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;overscroll-behavior:none}
-body{
-  background:var(--paper);color:var(--ink);
+body{background:var(--paper);color:var(--ink);
   font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-weight:600;-webkit-user-select:none;user-select:none;touch-action:manipulation;
-}
+  font-weight:600;-webkit-user-select:none;user-select:none;touch-action:manipulation}
 button{font:inherit;color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;cursor:pointer}
 button:disabled{border-color:var(--soft);color:#bdbdbd}
-button:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
-input,textarea{font:inherit;font-weight:600;color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;padding:10px;width:100%;-webkit-user-select:text;user-select:text}
+button:focus-visible{outline:4px solid var(--p2);outline-offset:2px}
+input{font:inherit;font-weight:700;color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;padding:10px;width:100%;-webkit-user-select:text;user-select:text}
 
 #app{height:100%;display:flex;flex-direction:column;padding:clamp(10px,1.6vmin,20px);gap:clamp(8px,1.4vmin,16px)}
 
@@ -33,40 +42,55 @@ input,textarea{font:inherit;font-weight:600;color:var(--ink);background:var(--pa
 .brand{font-size:clamp(14px,2.2vmin,22px);font-weight:800;letter-spacing:.2em;text-transform:uppercase}
 .meta{font-size:clamp(11px,1.7vmin,16px);font-weight:700;letter-spacing:.06em}
 
-/* tarjeta del reto: manda en la pantalla */
+/* tarjeta del reto · la banda superior lleva el color de quien dibuja */
 .card{flex:1 1 auto;min-height:0;border:var(--rule) solid var(--ink);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center;padding:clamp(12px,3vmin,36px);gap:clamp(8px,2vmin,20px)}
-.eyebrow{font-size:clamp(10px,1.6vmin,15px);letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+  border-top:clamp(10px,1.8vmin,18px) solid var(--turn,var(--ink));background:var(--turn-bg,var(--paper));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:clamp(12px,3vmin,36px);gap:clamp(8px,2vmin,20px)}
+.eyebrow{display:flex;align-items:center;gap:8px;font-size:clamp(11px,1.8vmin,17px);
+  letter-spacing:.12em;text-transform:uppercase;font-weight:800}
 .phrase{font-weight:800;line-height:1.1;font-size:var(--fs,clamp(28px,7vmin,84px))}
 .mask{font-weight:800;letter-spacing:.08em;font-size:clamp(44px,14vmin,150px);line-height:1}
 .hint{font-size:clamp(13px,2vmin,20px);font-weight:600;line-height:1.35;max-width:36ch;margin:0}
 
-/* la regla de 60 segundos */
+/* la marca de cada jugador: color + forma */
+.pip{width:1em;height:1em;flex:0 0 auto;background:var(--c,var(--ink));border:2px solid var(--ink)}
+.pip.f1{border-radius:50%}
+.pip.f2{border:0;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pip.f3{border-radius:0}
+
+/* regla de segundos */
 .timer{display:flex;align-items:center;gap:clamp(10px,2vmin,20px);flex:0 0 auto}
 .digits{font-family:ui-monospace,"DejaVu Sans Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums;
-        font-size:clamp(34px,9vmin,110px);font-weight:700;line-height:1;min-width:3.1ch;text-align:right}
+  font-size:clamp(34px,9vmin,110px);font-weight:700;line-height:1;min-width:3.1ch;text-align:right}
 .ruler{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;flex:1;
-       height:clamp(28px,6vmin,64px);border:var(--rule) solid var(--ink);padding:4px}
+  height:clamp(28px,6vmin,64px);border:var(--rule) solid var(--ink);padding:4px;background:var(--paper)}
 .tick{background:var(--paper)}
-.tick.on{background:var(--ink)}
-.tick.last{background:var(--red)}
+.tick.on{background:var(--p2)}
+.tick.last{background:var(--warn)}
 
 .row{display:flex;gap:8px;flex:0 0 auto}
 .row>*{flex:1}
-.btn{padding:clamp(12px,2.4vmin,26px) 8px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
-     font-size:clamp(14px,2.4vmin,24px)}
+.btn{padding:clamp(12px,2.4vmin,26px) 8px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;font-size:clamp(14px,2.4vmin,24px)}
 .btn.primary{background:var(--ink);color:var(--paper)}
 .btn.primary:disabled{background:var(--soft);color:#bdbdbd;border-color:var(--soft)}
-.btn.small{padding:clamp(9px,1.6vmin,16px) 6px;font-size:clamp(12px,1.9vmin,18px);letter-spacing:.02em}
+.btn.small{padding:clamp(9px,1.6vmin,16px) 6px;font-size:clamp(12px,1.9vmin,18px);letter-spacing:.02em;text-transform:none}
 
-.score{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:0 0 auto}
-.team{border:var(--rule) solid var(--ink);padding:clamp(6px,1.2vmin,12px);display:flex;align-items:center;gap:10px}
-.team .who{font-size:clamp(10px,1.6vmin,15px);letter-spacing:.12em;text-transform:uppercase;font-weight:800;flex:1;text-align:left}
-.team .pts{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums;font-size:clamp(22px,4vmin,40px);font-weight:700;line-height:1;min-width:2ch;text-align:center}
-.team button{padding:clamp(6px,1.2vmin,12px) clamp(10px,1.6vmin,16px);font-weight:800;flex:0 0 auto}
+/* marcador de jugadores */
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:0 0 auto}
+.player{border:var(--rule) solid var(--ink);border-left:clamp(8px,1.4vmin,14px) solid var(--c);
+  background:var(--bg);padding:clamp(6px,1.1vmin,11px);display:flex;flex-direction:column;gap:6px}
+.player .who{display:flex;align-items:center;gap:6px;font-size:clamp(11px,1.7vmin,16px);font-weight:800;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.player .who b{overflow:hidden;text-overflow:ellipsis}
+.player.turn .who::after{content:'dibuja';margin-left:auto;font-size:.72em;letter-spacing:.1em;
+  text-transform:uppercase;border:2px solid var(--ink);padding:1px 5px;background:var(--paper)}
+.player .line{display:flex;align-items:center;gap:6px}
+.player .pts{font-family:ui-monospace,monospace;font-variant-numeric:tabular-nums;flex:1;text-align:center;
+  font-size:clamp(20px,3.6vmin,36px);font-weight:700;line-height:1}
+.player button{padding:clamp(5px,1vmin,10px) clamp(8px,1.4vmin,14px);font-weight:800;background:var(--paper)}
 
-/* pantallas de ajustes */
+/* diálogos */
 dialog{border:var(--rule) solid var(--ink);padding:0;width:min(560px,94vw);max-height:92vh;background:var(--paper);color:var(--ink)}
 dialog::backdrop{background:rgba(0,0,0,.4)}
 .sheet{padding:18px;display:flex;flex-direction:column;gap:14px;overflow:auto}
@@ -77,7 +101,13 @@ dialog::backdrop{background:rgba(0,0,0,.4)}
 .seg button{flex:1;min-width:54px;padding:10px 4px;font-weight:700}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .note{font-size:13px;font-weight:600;line-height:1.4;margin:0;border-left:var(--rule) solid var(--ink);padding-left:10px}
-textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line-height:1.5}
+textarea{font:inherit;font-family:ui-monospace,monospace;font-size:13px;line-height:1.5;font-weight:600;
+  color:var(--ink);background:var(--paper);border:var(--rule) solid var(--ink);border-radius:0;padding:10px;width:100%;min-height:150px;
+  -webkit-user-select:text;user-select:text}
+.namerow{display:flex;align-items:center;gap:10px;border:var(--rule) solid var(--ink);
+  border-left:clamp(8px,1.4vmin,14px) solid var(--c);background:var(--bg);padding:8px}
+.namerow .pip{width:18px;height:18px;font-size:18px}
+.namerow input{border:0;padding:6px 2px;background:transparent}
 </style>
 </head>
 <body>
@@ -87,7 +117,7 @@ textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line
     <div class="meta" id="meta">— / —</div>
   </div>
 
-  <div class="card">
+  <div class="card" id="card">
     <div class="eyebrow" id="eyebrow">Turno nuevo</div>
     <div class="phrase" id="phrase" hidden></div>
     <div class="mask" id="mask" hidden>? ? ?</div>
@@ -110,11 +140,18 @@ textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line
     <button class="btn small" id="btnSet">Ajustes</button>
   </div>
 
-  <div class="score">
-    <div class="team"><span class="who">Equipo A</span><button data-team="A" data-d="-1">−</button><span class="pts" id="ptsA">0</span><button data-team="A" data-d="1">+</button></div>
-    <div class="team"><span class="who">Equipo B</span><button data-team="B" data-d="-1">−</button><span class="pts" id="ptsB">0</span><button data-team="B" data-d="1">+</button></div>
-  </div>
+  <div class="score" id="score"></div>
 </div>
+
+<dialog id="dlgPlayers"><div class="sheet">
+  <h2>¿Quiénes juegan?</h2>
+  <p class="note">Cada jugador tiene su color y su forma. El turno de dibujar va rotando solo.</p>
+  <div class="field" id="nameFields"></div>
+  <div class="row">
+    <button class="btn small" id="btnZero">Puntos a cero</button>
+    <button class="btn primary small" id="btnSavePlayers">Guardar</button>
+  </div>
+</div></dialog>
 
 <dialog id="dlgSet"><div class="sheet">
   <h2>Ajustes</h2>
@@ -126,7 +163,7 @@ textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line
     <div class="seg" id="segBeep"><button data-v="1">Con sonido</button><button data-v="0">En silencio</button></div>
   </div>
   <div class="row">
-    <button class="btn small" id="btnResetScore">Reiniciar marcador</button>
+    <button class="btn small" id="btnEditPlayers">Jugadores</button>
     <button class="btn primary small" id="btnCloseSet">Listo</button>
   </div>
 </div></dialog>
@@ -134,18 +171,15 @@ textarea{min-height:150px;font-family:ui-monospace,monospace;font-size:13px;line
 <dialog id="dlgWords"><div class="sheet">
   <h2>Banco de frases</h2>
   <p class="note" id="wStatus">—</p>
-
   <div class="field"><span>Descargar desde Notion (con conexión)</span>
     <input id="syncUrl" type="text" inputmode="url" placeholder="frases.json" spellcheck="false">
     <div class="row"><button class="btn small" id="btnSync">Sincronizar ahora</button></div>
     <p class="note">Si la app y el archivo están en el mismo sitio, déjalo vacío: usa <b>frases.json</b> de la propia carpeta.</p>
   </div>
-
   <div class="field"><span>Pegar o editar la lista</span>
-    <textarea id="wText" spellcheck="false" placeholder="### Bloque 1&#10;1. I read at school.&#10;2. I write in the classroom."></textarea>
+    <textarea id="wText" spellcheck="false"></textarea>
     <p class="note">Una frase por línea. El número inicial es opcional. Las líneas que empiezan por <b>###</b> abren un bloque nuevo.</p>
   </div>
-
   <div class="row">
     <button class="btn small" id="btnRestore">Volver a las originales</button>
     <button class="btn small" id="btnSaveText">Guardar lista</button>
@@ -166,8 +200,6 @@ function fromBuiltin(){
   BUILTIN.forEach((arr,i)=>arr.forEach(t=>items.push({t,b:i+1})));
   return {items,source:'originales',updated:''};
 }
-
-/* Lector tolerante: JSON del worker, JSON crudo de Notion, o texto pegado. */
 function parseAny(raw){
   const txt=String(raw).trim();
   if(txt.startsWith('{')||txt.startsWith('[')){
@@ -222,8 +254,14 @@ const store={
   get(k,d){try{const v=localStorage.getItem('pict.'+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
   set(k,v){try{localStorage.setItem('pict.'+k,JSON.stringify(v))}catch(e){}}
 };
+const COLORS=[
+  {c:'var(--p1)',bg:'var(--p1-bg)',shape:'f1'},
+  {c:'var(--p2)',bg:'var(--p2-bg)',shape:'f2'},
+  {c:'var(--p3)',bg:'var(--p3-bg)',shape:'f3'}
+];
 let cfg={dur:store.get('dur',60),block:store.get('block',0),beep:store.get('beep',1),url:store.get('url','')};
-let score={A:store.get('A',0),B:store.get('B',0)};
+let players=store.get('players',null);
+let drawer=store.get('drawer',0);
 let bank=store.get('bank',null)||fromBuiltin();
 let order=[],cursor=0,current=null,phase='idle',endAt=0,tick=null;
 
@@ -236,7 +274,55 @@ function reshuffle(){
 function paintMeta(){$('#meta').textContent=`${cursor} / ${order.length}`+(cfg.block?` · bloque ${cfg.block}`:'')}
 function saveBank(){store.set('bank',bank)}
 
-/* ============ 3 · REGLA DE SEGUNDOS ============ */
+/* ============ 3 · JUGADORES ============ */
+function pip(i){return `<i class="pip ${COLORS[i].shape}" style="--c:${COLORS[i].c}"></i>`}
+function paintScore(){
+  if(!players){
+    $('#score').innerHTML='<button class="btn small" id="btnAddPlayers" style="grid-column:1/-1">Añadir jugadores</button>';
+    $('#btnAddPlayers').onclick=openPlayers;return;
+  }
+  $('#score').innerHTML=players.map((p,i)=>`
+    <div class="player${i===drawer?' turn':''}" style="--c:${COLORS[i].c};--bg:${COLORS[i].bg}">
+      <div class="who">${pip(i)}<b>${escapeHtml(p.n)}</b></div>
+      <div class="line">
+        <button data-i="${i}" data-d="-1" aria-label="Quitar punto">−</button>
+        <span class="pts">${p.p}</span>
+        <button data-i="${i}" data-d="1" aria-label="Sumar punto">+</button>
+      </div>
+    </div>`).join('');
+  $$('#score button').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;players[i].p=Math.max(0,players[i].p+ +b.dataset.d);
+    store.set('players',players);paintScore();
+  });
+}
+function escapeHtml(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function paintTurn(){
+  if(!players||!players.length)return;
+  const i=drawer%players.length;
+  document.documentElement.style.setProperty('--turn',COLORS[i].c);
+  document.documentElement.style.setProperty('--turn-bg',COLORS[i].bg);
+}
+function openPlayers(){
+  const base=players||[{n:'',p:0},{n:'',p:0},{n:'',p:0}];
+  $('#nameFields').innerHTML=base.map((p,i)=>`
+    <label class="namerow" style="--c:${COLORS[i].c};--bg:${COLORS[i].bg}">
+      ${pip(i)}<input type="text" maxlength="14" value="${escapeHtml(p.n)}" placeholder="Jugador ${i+1}" data-i="${i}">
+    </label>`).join('');
+  $('#dlgPlayers').showModal();
+}
+$('#btnSavePlayers').onclick=()=>{
+  const names=$$('#nameFields input').map((el,i)=>el.value.trim()||`Jugador ${i+1}`);
+  players=names.map((n,i)=>({n,p:players&&players[i]?players[i].p:0}));
+  store.set('players',players);
+  drawer=drawer%players.length;paintScore();paintTurn();setPhase(phase);
+  $('#dlgPlayers').close();
+};
+$('#btnZero').onclick=()=>{
+  if(players){players.forEach(p=>p.p=0);store.set('players',players);paintScore()}
+};
+$('#btnEditPlayers').onclick=()=>{$('#dlgSet').close();openPlayers()};
+
+/* ============ 4 · REGLA DE SEGUNDOS ============ */
 const TICKS=12,ruler=$('#ruler');
 for(let i=0;i<TICKS;i++)ruler.appendChild(Object.assign(document.createElement('div'),{className:'tick on'}));
 const ticks=[...ruler.children];let lastFilled=-1;
@@ -246,17 +332,22 @@ function paintRuler(left,total){
   ticks.forEach((t,i)=>t.className='tick'+(i<filled?(filled<=2?' on last':' on'):''));
 }
 
-/* ============ 4 · TURNO ============ */
+/* ============ 5 · TURNO ============ */
+function who(){return players&&players.length?players[drawer%players.length]:null}
 function setPhase(p){
   phase=p;
   const ready=p==='ready',run=p==='run',end=p==='end';
   $('#btnNew').disabled=run;$('#btnGo').disabled=!ready;
   $('#btnPeek').disabled=!run;$('#btnStop').disabled=!run;
   $('#phrase').hidden=!(ready||end);$('#mask').hidden=!run;$('#hint').hidden=run||end;
-  if(p==='idle'){$('#eyebrow').textContent='Turno nuevo';$('#hint').innerHTML='Toca <b>Nueva frase</b> y léela sin que nadie más la vea.'}
-  if(ready){$('#eyebrow').textContent='Sólo para quien dibuja';$('#hint').innerHTML='Deja la tablet a la vista y toca <b>Empezar</b>.'}
-  if(run)$('#eyebrow').textContent='Dibujando';
-  if(end)$('#eyebrow').textContent='Se acabó el tiempo';
+  const nombre=who()?escapeHtml(who().n):'';
+  const marca=who()?pip(drawer%players.length):'';
+  if(p==='idle'){$('#eyebrow').innerHTML=marca+(nombre?`Dibuja ${nombre}`:'Turno nuevo');
+    $('#hint').innerHTML='Toca <b>Nueva frase</b> y léela sin que nadie más la vea.'}
+  if(ready){$('#eyebrow').innerHTML=marca+(nombre?`Sólo para ${nombre}`:'Sólo para quien dibuja');
+    $('#hint').innerHTML='Deja la tablet a la vista y toca <b>Empezar</b>.'}
+  if(run)$('#eyebrow').innerHTML=marca+(nombre?`${nombre} está dibujando`:'Dibujando');
+  if(end)$('#eyebrow').innerHTML=marca+'Se acabó el tiempo';
 }
 function showPhrase(t){
   const el=$('#phrase');el.textContent=t;
@@ -265,11 +356,12 @@ function showPhrase(t){
 }
 function newPhrase(){
   if(tick)stopTimer(false);
+  if(players&&players.length&&current){drawer=(drawer+1)%players.length;store.set('drawer',drawer)}
   if(!order.length)reshuffle();
   if(!order.length){$('#hint').textContent='No hay frases cargadas. Abre Frases y pega tu lista.';return}
   if(cursor>=order.length)reshuffle();
   current=order[cursor++];
-  showPhrase(current.t);paintMeta();
+  showPhrase(current.t);paintMeta();paintTurn();paintScore();
   showDigits(cfg.dur);lastFilled=-1;paintRuler(cfg.dur,cfg.dur);
   setPhase('ready');
 }
@@ -320,11 +412,7 @@ peek.addEventListener('pointerdown',e=>{if(phase==='run'){e.preventDefault();$('
 addEventListener('keydown',e=>{if(e.code==='Space'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
   e.preventDefault();phase==='run'?stopTimer(true):phase==='ready'?start():newPhrase()}});
 
-/* marcador */
-function paintScore(){$('#ptsA').textContent=score.A;$('#ptsB').textContent=score.B}
-$$('.team button').forEach(b=>b.onclick=()=>{const t=b.dataset.team;score[t]=Math.max(0,score[t]+ +b.dataset.d);store.set(t,score[t]);paintScore()});
-
-/* ============ 5 · AJUSTES ============ */
+/* ============ 6 · AJUSTES ============ */
 function paintSeg(id,val){$$(`#${id} button`).forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===val))}
 function buildBlockSeg(){
   const seg=$('#segBlock');seg.innerHTML='';
@@ -338,9 +426,8 @@ $('#btnCloseSet').onclick=()=>$('#dlgSet').close();
 $$('#segTime button').forEach(b=>b.onclick=()=>{cfg.dur=+b.dataset.v;store.set('dur',cfg.dur);paintSeg('segTime',cfg.dur);
   if(phase!=='run'){showDigits(cfg.dur);lastFilled=-1;paintRuler(cfg.dur,cfg.dur)}});
 $$('#segBeep button').forEach(b=>b.onclick=()=>{cfg.beep=+b.dataset.v;store.set('beep',cfg.beep);paintSeg('segBeep',cfg.beep)});
-$('#btnResetScore').onclick=()=>{score={A:0,B:0};store.set('A',0);store.set('B',0);paintScore()};
 
-/* ============ 6 · FRASES ============ */
+/* ============ 7 · FRASES ============ */
 function wStatus(msg){
   $('#wStatus').textContent = msg || `${bank.items.length} frases · ${blocks().length} bloques · origen: ${bank.source}${bank.updated?' · '+bank.updated:''}`;
 }
@@ -349,10 +436,10 @@ $('#btnCloseWords').onclick=()=>$('#dlgWords').close();
 function adopt(items,source){
   if(!items.length){wStatus('No se encontró ninguna frase. Revisa el formato.');return false}
   bank={items,source,updated:new Date().toISOString().slice(0,10)};
-  saveBank();cfg.block=0;store.set('block',0);reshuffle();buildBlockSeg();setPhase('idle');wStatus();return true;
+  saveBank();cfg.block=0;store.set('block',0);reshuffle();setPhase('idle');wStatus();return true;
 }
-$('#btnSaveText').onclick=()=>{if(adopt(parseText($('#wText').value),'lista propia'))wStatus()};
-$('#btnRestore').onclick=()=>{bank=fromBuiltin();saveBank();cfg.block=0;store.set('block',0);reshuffle();buildBlockSeg();$('#wText').value=toText(bank.items);wStatus()};
+$('#btnSaveText').onclick=()=>{adopt(parseText($('#wText').value),'lista propia')};
+$('#btnRestore').onclick=()=>{bank=fromBuiltin();saveBank();cfg.block=0;store.set('block',0);reshuffle();$('#wText').value=toText(bank.items);wStatus()};
 $('#btnSync').onclick=async()=>{
   const escrito=$('#syncUrl').value.trim();
   cfg.url=escrito;store.set('url',escrito);
@@ -368,8 +455,9 @@ $('#btnSync').onclick=async()=>{
   }
 };
 
-/* ============ 7 · ARRANQUE ============ */
-reshuffle();paintScore();setPhase('idle');showDigits(cfg.dur);paintRuler(cfg.dur,cfg.dur);
+/* ============ 8 · ARRANQUE ============ */
+reshuffle();paintTurn();paintScore();setPhase('idle');showDigits(cfg.dur);paintRuler(cfg.dur,cfg.dur);
+if(!players)openPlayers();
 if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
 </body>
