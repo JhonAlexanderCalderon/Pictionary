@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-07-29",
+ "updated": "2026-07-30",
  "source": "notion",
  "items": [
   {
@@ -14,7 +14,7 @@
    "n": 2
   },
   {
-   "t": "I listen with my teacher.",
+   "t": "I listen to my teacher.",
    "b": 1,
    "n": 3
   },
@@ -24,7 +24,7 @@
    "n": 4
   },
   {
-   "t": "You learn at my desk.",
+   "t": "You write at your desk.",
    "b": 1,
    "n": 5
   },
@@ -49,7 +49,7 @@
    "n": 9
   },
   {
-   "t": "I walk at home.",
+   "t": "I walk to school.",
    "b": 1,
    "n": 10
   },
@@ -79,7 +79,7 @@
    "n": 15
   },
   {
-   "t": "They climb with my dad.",
+   "t": "They climb a tree with my dad.",
    "b": 1,
    "n": 16
   },
@@ -109,12 +109,12 @@
    "n": 21
   },
   {
-   "t": "We build in the rain.",
+   "t": "We build a house in the rain.",
    "b": 1,
    "n": 22
   },
   {
-   "t": "We win in the sun.",
+   "t": "We win the game.",
    "b": 1,
    "n": 23
   },
@@ -139,12 +139,12 @@
    "n": 27
   },
   {
-   "t": "We think about a brown bear.",
+   "t": "We see a brown bear.",
    "b": 1,
    "n": 28
   },
   {
-   "t": "They know a white cat.",
+   "t": "They see a white cat.",
    "b": 1,
    "n": 29
   },
@@ -159,7 +159,7 @@
    "n": 31
   },
   {
-   "t": "We sleep on the swing.",
+   "t": "We play on the swing.",
    "b": 1,
    "n": 32
   },
@@ -189,7 +189,7 @@
    "n": 37
   },
   {
-   "t": "I climb in the town.",
+   "t": "I climb a big tree.",
    "b": 1,
    "n": 38
   },
@@ -199,12 +199,12 @@
    "n": 39
   },
   {
-   "t": "We explore at the market.",
+   "t": "We explore the market.",
    "b": 1,
    "n": 40
   },
   {
-   "t": "They protect the room.",
+   "t": "They clean the room.",
    "b": 1,
    "n": 41
   },
@@ -219,17 +219,17 @@
    "n": 43
   },
   {
-   "t": "We fight at the window.",
+   "t": "We clean the window.",
    "b": 1,
    "n": 44
   },
   {
-   "t": "They escape in the shop.",
+   "t": "They buy bread at the shop.",
    "b": 1,
    "n": 45
   },
   {
-   "t": "I lead on the hill.",
+   "t": "I walk up the hill.",
    "b": 1,
    "n": 46
   },
@@ -239,7 +239,7 @@
    "n": 47
   },
   {
-   "t": "We cross at the beach.",
+   "t": "We cross the road.",
    "b": 1,
    "n": 48
   },
@@ -319,7 +319,7 @@
    "n": 63
   },
   {
-   "t": "My dad reads with a funny book.",
+   "t": "My dad reads a funny book.",
    "b": 2,
    "n": 64
   },
@@ -339,7 +339,7 @@
    "n": 67
   },
   {
-   "t": "Lorena listens with my teacher.",
+   "t": "Lorena listens to my teacher.",
    "b": 2,
    "n": 68
   },
@@ -409,7 +409,7 @@
    "n": 81
   },
   {
-   "t": "My grandma reads with a funny book.",
+   "t": "My grandma reads a funny book.",
    "b": 2,
    "n": 82
   },
@@ -434,7 +434,7 @@
    "n": 86
   },
   {
-   "t": "My teacher explains at school.",
+   "t": "My teacher explains the lesson.",
    "b": 2,
    "n": 87
   },
@@ -459,27 +459,27 @@
    "n": 91
   },
   {
-   "t": "My teacher listens at my desk.",
+   "t": "My teacher listens to me.",
    "b": 2,
    "n": 92
   },
   {
-   "t": "My teacher helps at school.",
+   "t": "My teacher helps me at school.",
    "b": 2,
    "n": 93
   },
   {
-   "t": "My teacher understands in the classroom.",
+   "t": "My teacher writes on the board.",
    "b": 2,
    "n": 94
   },
   {
-   "t": "My teacher knows at home.",
+   "t": "My teacher rides a bike.",
    "b": 2,
    "n": 95
   },
   {
-   "t": "My teacher thinks in the living room.",
+   "t": "My teacher sings a song.",
    "b": 2,
    "n": 96
   },
@@ -494,7 +494,7 @@
    "n": 98
   },
   {
-   "t": "My teacher looks with a happy face.",
+   "t": "My teacher has a happy face.",
    "b": 2,
    "n": 99
   },
@@ -524,7 +524,7 @@
    "n": 104
   },
   {
-   "t": "Rowan rescues on the grass.",
+   "t": "Rowan rescues a cat.",
    "b": 3,
    "n": 105
   },
@@ -539,7 +539,7 @@
    "n": 107
   },
   {
-   "t": "Rowan fights at the zoo.",
+   "t": "Rowan sees a lion at the zoo.",
    "b": 3,
    "n": 108
   },
@@ -549,7 +549,7 @@
    "n": 109
   },
   {
-   "t": "Rowan leads in the car.",
+   "t": "Rowan drives the car.",
    "b": 3,
    "n": 110
   },
@@ -559,17 +559,17 @@
    "n": 111
   },
   {
-   "t": "Strong Jonn climbs in the sun.",
+   "t": "Strong Jonn climbs a big rock.",
    "b": 3,
    "n": 112
   },
   {
-   "t": "Strong Jonn helps with my dog.",
+   "t": "Strong Jonn walks my dog.",
    "b": 3,
    "n": 113
   },
   {
-   "t": "Strong Jonn protects with Star.",
+   "t": "Strong Jonn rides Star.",
    "b": 3,
    "n": 114
   },
@@ -584,22 +584,22 @@
    "n": 116
   },
   {
-   "t": "Strong Jonn moves in the rain.",
+   "t": "Strong Jonn runs in the rain.",
    "b": 3,
    "n": 117
   },
   {
-   "t": "Strong Jonn thinks at the park.",
+   "t": "Strong Jonn sits at the park.",
    "b": 3,
    "n": 118
   },
   {
-   "t": "Strong Jonn wants a brown bear.",
+   "t": "Strong Jonn sees a brown bear.",
    "b": 3,
    "n": 119
   },
   {
-   "t": "Strong Jonn builds with a blue toy.",
+   "t": "Strong Jonn builds a blue tower.",
    "b": 3,
    "n": 120
   },
@@ -619,7 +619,7 @@
    "n": 123
   },
   {
-   "t": "Marlie learns at my desk.",
+   "t": "Marlie reads at her desk.",
    "b": 3,
    "n": 124
   },
@@ -629,27 +629,27 @@
    "n": 125
   },
   {
-   "t": "Marlie listens with my teacher.",
+   "t": "Marlie listens to my teacher.",
    "b": 3,
    "n": 126
   },
   {
-   "t": "Marlie asks on the table.",
+   "t": "Marlie asks a question.",
    "b": 3,
    "n": 127
   },
   {
-   "t": "Marlie answers at lunch time.",
+   "t": "Marlie raises her hand.",
    "b": 3,
    "n": 128
   },
   {
-   "t": "Marlie shows in my bedroom.",
+   "t": "Marlie shows a picture.",
    "b": 3,
    "n": 129
   },
   {
-   "t": "Marlie explains in the kitchen.",
+   "t": "Marlie helps in the kitchen.",
    "b": 3,
    "n": 130
   },
@@ -689,7 +689,7 @@
    "n": 137
   },
   {
-   "t": "Bronden washes their new shoes.",
+   "t": "Bronden washes the new shoes.",
    "b": 3,
    "n": 138
   },
@@ -714,12 +714,12 @@
    "n": 142
   },
   {
-   "t": "Val jumps with a big ball.",
+   "t": "Val throws a big ball.",
    "b": 3,
    "n": 143
   },
   {
-   "t": "Val reads with a funny book.",
+   "t": "Val reads a funny book.",
    "b": 3,
    "n": 144
   },
@@ -739,12 +739,12 @@
    "n": 147
   },
   {
-   "t": "Val wins at the beach.",
+   "t": "Val wins the race.",
    "b": 3,
    "n": 148
   },
   {
-   "t": "Val loses at the zoo.",
+   "t": "Val feeds the animals at the zoo.",
    "b": 3,
    "n": 149
   },
@@ -769,7 +769,7 @@
    "n": 153
   },
   {
-   "t": "Ellis turns in the sun.",
+   "t": "Ellis sits in the sun.",
    "b": 4,
    "n": 154
   },

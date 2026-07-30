@@ -1,52 +1,52 @@
 ### Bloque 1
 1. I read at school.
 2. I write in the classroom.
-3. I listen with my teacher.
+3. I listen to my teacher.
 4. You speak with my friends.
-5. You learn at my desk.
+5. You write at your desk.
 6. We study in the classroom.
 7. We look at the table.
 8. They draw at school.
 9. They color in the classroom.
-10. I walk at home.
+10. I walk to school.
 11. I run in my bedroom.
 12. You jump in the kitchen.
 13. You sit in the living room.
 14. We stand on the bed.
 15. We walk with my mom.
-16. They climb with my dad.
+16. They climb a tree with my dad.
 17. They travel with Oliver.
 18. I play at the park.
 19. I play on the bus.
 20. You sleep in the car.
 21. You walk on the road.
-22. We build in the rain.
-23. We win in the sun.
+22. We build a house in the rain.
+23. We win the game.
 24. They sit on the grass.
 25. They find my dog on the grass.
 26. I play with my cat.
 27. You play with a small bird.
-28. We think about a brown bear.
-29. They know a white cat.
+28. We see a brown bear.
+29. They see a white cat.
 30. I eat at lunch time.
 31. You drink in the afternoon.
-32. We sleep on the swing.
+32. We play on the swing.
 33. They read a funny book.
 34. I play with a blue toy.
 35. You play with a yellow hat.
 36. We wear a green shirt.
 37. They smile with a happy face.
-38. I climb in the town.
+38. I climb a big tree.
 39. You hide in the city.
-40. We explore at the market.
-41. They protect the room.
+40. We explore the market.
+41. They clean the room.
 42. I sit on the floor.
 43. You look in the box.
-44. We fight at the window.
-45. They escape in the shop.
-46. I lead on the hill.
+44. We clean the window.
+45. They buy bread at the shop.
+46. I walk up the hill.
 47. You wait at the door.
-48. We cross at the beach.
+48. We cross the road.
 49. They swim in the pool.
 50. I travel on the boat.
 
@@ -64,11 +64,11 @@
 61. My dad runs in the park.
 62. My dad drinks in the kitchen.
 63. My dad cooks with my mom.
-64. My dad reads with a funny book.
+64. My dad reads a funny book.
 65. My dad sits on the floor.
 66. Lorena learns at school.
 67. Lorena draws in the classroom.
-68. Lorena listens with my teacher.
+68. Lorena listens to my teacher.
 69. Lorena plays on the playground.
 70. Lorena runs in the park.
 71. Lorena eats at home.
@@ -82,24 +82,24 @@
 79. Oliver sleeps in my bedroom.
 80. My grandma cooks in the kitchen.
 81. My grandma cleans at home.
-82. My grandma reads with a funny book.
+82. My grandma reads a funny book.
 83. My grandma walks in the garden.
 84. My grandma sits on the floor.
 85. My grandma eats at lunch time.
 86. My grandma sleeps in the living room.
-87. My teacher explains at school.
+87. My teacher explains the lesson.
 88. My teacher speaks in the classroom.
 89. My teacher speaks with my friends.
 90. My teacher reads at the table.
 91. My teacher puts a note in my backpack.
-92. My teacher listens at my desk.
-93. My teacher helps at school.
-94. My teacher understands in the classroom.
-95. My teacher knows at home.
-96. My teacher thinks in the living room.
+92. My teacher listens to me.
+93. My teacher helps me at school.
+94. My teacher writes on the board.
+95. My teacher rides a bike.
+96. My teacher sings a song.
 97. My teacher wants to go to the park.
 98. My teacher sits on the bus.
-99. My teacher looks with a happy face.
+99. My teacher has a happy face.
 100. My teacher works at school.
 
 ### Bloque 3
@@ -107,32 +107,32 @@
 102. Rowan runs on the road.
 103. Rowan hides in the rain.
 104. Rowan explores in the sun.
-105. Rowan rescues on the grass.
+105. Rowan rescues a cat.
 106. Rowan searches in the water.
 107. Rowan finds a shell at the beach.
-108. Rowan fights at the zoo.
+108. Rowan sees a lion at the zoo.
 109. Rowan escapes from the bus.
-110. Rowan leads in the car.
+110. Rowan drives the car.
 111. Strong Jonn walks on the road.
-112. Strong Jonn climbs in the sun.
-113. Strong Jonn helps with my dog.
-114. Strong Jonn protects with Star.
+112. Strong Jonn climbs a big rock.
+113. Strong Jonn walks my dog.
+114. Strong Jonn rides Star.
 115. Strong Jonn works at home.
 116. Strong Jonn stands on the grass.
-117. Strong Jonn moves in the rain.
-118. Strong Jonn thinks at the park.
-119. Strong Jonn wants a brown bear.
-120. Strong Jonn builds with a blue toy.
+117. Strong Jonn runs in the rain.
+118. Strong Jonn sits at the park.
+119. Strong Jonn sees a brown bear.
+120. Strong Jonn builds a blue tower.
 121. Marlie reads at school.
 122. Marlie writes in the classroom.
 123. Marlie speaks with my friends.
-124. Marlie learns at my desk.
+124. Marlie reads at her desk.
 125. Marlie studies in the classroom.
-126. Marlie listens with my teacher.
-127. Marlie asks on the table.
-128. Marlie answers at lunch time.
-129. Marlie shows in my bedroom.
-130. Marlie explains in the kitchen.
+126. Marlie listens to my teacher.
+127. Marlie asks a question.
+128. Marlie raises her hand.
+129. Marlie shows a picture.
+130. Marlie helps in the kitchen.
 131. Bronden works in the living room.
 132. Bronden cleans at home.
 133. Bronden cooks with my mom.
@@ -140,25 +140,25 @@
 135. Bronden drinks with Oliver.
 136. Bronden sleeps on the bed.
 137. Bronden wakes up in the morning.
-138. Bronden washes their new shoes.
+138. Bronden washes the new shoes.
 139. Bronden buys a yellow hat.
 140. Bronden sells a green shirt.
 141. Val plays at the park.
 142. Val runs on the playground.
-143. Val jumps with a big ball.
-144. Val reads with a funny book.
+143. Val throws a big ball.
+144. Val reads a funny book.
 145. Val writes with a black pen.
 146. Val eats a sweet apple.
 147. Val builds with blocks.
-148. Val wins at the beach.
-149. Val loses at the zoo.
+148. Val wins the race.
+149. Val feeds the animals at the zoo.
 150. Val shares a toy on the bus.
 
 ### Bloque 4
 151. Ellis travels in the car.
 152. Ellis arrives at home.
 153. Ellis stops in the rain.
-154. Ellis turns in the sun.
+154. Ellis sits in the sun.
 155. Ellis follows on the grass.
 156. Ellis passes in the water.
 157. Ellis leaves at the park.
