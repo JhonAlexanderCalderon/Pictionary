@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-07-30",
+ "updated": "2026-07-31",
  "source": "notion",
  "items": [
   {
@@ -774,17 +774,17 @@
    "n": 154
   },
   {
-   "t": "Ellis follows on the grass.",
+   "t": "Ellis follows my dog.",
    "b": 4,
    "n": 155
   },
   {
-   "t": "Ellis passes in the water.",
+   "t": "Ellis swims in the water.",
    "b": 4,
    "n": 156
   },
   {
-   "t": "Ellis leaves at the park.",
+   "t": "Ellis runs at the park.",
    "b": 4,
    "n": 157
   },
@@ -799,22 +799,22 @@
    "n": 159
   },
   {
-   "t": "Ellis stays on the bus.",
+   "t": "Ellis sits on the bus.",
    "b": 4,
    "n": 160
   },
   {
-   "t": "Allun thinks at school.",
+   "t": "Allun draws at school.",
    "b": 4,
    "n": 161
   },
   {
-   "t": "Allun knows in the classroom.",
+   "t": "Allun sings in the classroom.",
    "b": 4,
    "n": 162
   },
   {
-   "t": "Allun believes my teacher.",
+   "t": "Allun helps my teacher.",
    "b": 4,
    "n": 163
   },
@@ -824,12 +824,12 @@
    "n": 164
   },
   {
-   "t": "Allun wants at my desk.",
+   "t": "Allun sits at the desk.",
    "b": 4,
    "n": 165
   },
   {
-   "t": "Allun needs a backpack.",
+   "t": "Allun carries a backpack.",
    "b": 4,
    "n": 166
   },
@@ -839,17 +839,17 @@
    "n": 167
   },
   {
-   "t": "Allun expects at lunch time.",
+   "t": "Allun eats lunch at school.",
    "b": 4,
    "n": 168
   },
   {
-   "t": "Allun decides in my bedroom.",
+   "t": "Allun plays in the bedroom.",
    "b": 4,
    "n": 169
   },
   {
-   "t": "Allun thinks in the kitchen.",
+   "t": "Allun drinks water in the kitchen.",
    "b": 4,
    "n": 170
   },
@@ -899,7 +899,7 @@
    "n": 179
   },
   {
-   "t": "Sheba watches in the sun.",
+   "t": "Sheba watches the birds.",
    "b": 4,
    "n": 180
   },
@@ -924,7 +924,7 @@
    "n": 184
   },
   {
-   "t": "Star drinks in the water.",
+   "t": "Star drinks water.",
    "b": 4,
    "n": 185
   },
@@ -934,12 +934,12 @@
    "n": 186
   },
   {
-   "t": "Star stands on the floor.",
+   "t": "Star stands near the tree.",
    "b": 4,
    "n": 187
   },
   {
-   "t": "Star moves in the rain.",
+   "t": "Star runs in the rain.",
    "b": 4,
    "n": 188
   },
@@ -949,7 +949,7 @@
    "n": 189
   },
   {
-   "t": "Star lives at home.",
+   "t": "Star eats grass.",
    "b": 4,
    "n": 190
   },
@@ -974,17 +974,17 @@
    "n": 194
   },
   {
-   "t": "Annad thinks in my bedroom.",
+   "t": "Annad cleans the bedroom.",
    "b": 4,
    "n": 195
   },
   {
-   "t": "Annad knows the answer at school.",
+   "t": "Annad writes the answer at school.",
    "b": 4,
    "n": 196
   },
   {
-   "t": "Annad helps with my friends.",
+   "t": "Annad helps my friends.",
    "b": 4,
    "n": 197
   },
@@ -999,7 +999,7 @@
    "n": 199
   },
   {
-   "t": "Annad stays at home.",
+   "t": "Annad sleeps at home.",
    "b": 4,
    "n": 200
   }

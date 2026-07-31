@@ -159,22 +159,22 @@
 152. Ellis arrives at home.
 153. Ellis stops in the rain.
 154. Ellis sits in the sun.
-155. Ellis follows on the grass.
-156. Ellis passes in the water.
-157. Ellis leaves at the park.
+155. Ellis follows my dog.
+156. Ellis swims in the water.
+157. Ellis runs at the park.
 158. Ellis falls at the beach.
 159. Ellis goes to the zoo.
-160. Ellis stays on the bus.
-161. Allun thinks at school.
-162. Allun knows in the classroom.
-163. Allun believes my teacher.
+160. Ellis sits on the bus.
+161. Allun draws at school.
+162. Allun sings in the classroom.
+163. Allun helps my teacher.
 164. Allun plays with my friends.
-165. Allun wants at my desk.
-166. Allun needs a backpack.
+165. Allun sits at the desk.
+166. Allun carries a backpack.
 167. Allun jumps on the table.
-168. Allun expects at lunch time.
-169. Allun decides in my bedroom.
-170. Allun thinks in the kitchen.
+168. Allun eats lunch at school.
+169. Allun plays in the bedroom.
+170. Allun drinks water in the kitchen.
 171. Sheba protects my dog.
 172. Sheba plays with my cat.
 173. Sheba runs in the park.
@@ -184,24 +184,24 @@
 177. Sheba walks in the garden.
 178. Sheba sits on the floor.
 179. Sheba plays with a big ball.
-180. Sheba watches in the sun.
+180. Sheba watches the birds.
 181. Star runs on the grass.
 182. Star walks in the garden.
 183. Star jumps at the park.
 184. Star eats a sweet apple.
-185. Star drinks in the water.
+185. Star drinks water.
 186. Star sleeps on the bed.
-187. Star stands on the floor.
-188. Star moves in the rain.
+187. Star stands near the tree.
+188. Star runs in the rain.
 189. Star plays with a big ball.
-190. Star lives at home.
+190. Star eats grass.
 191. Annad works at home.
 192. Annad reads in the living room.
 193. Annad writes on the table.
 194. Annad speaks with my teacher.
-195. Annad thinks in my bedroom.
-196. Annad knows the answer at school.
-197. Annad helps with my friends.
+195. Annad cleans the bedroom.
+196. Annad writes the answer at school.
+197. Annad helps my friends.
 198. Annad walks in the garden.
 199. Annad sits on the floor.
-200. Annad stays at home.
+200. Annad sleeps at home.
